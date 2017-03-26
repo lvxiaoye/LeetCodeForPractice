@@ -23,6 +23,13 @@ public class SingleNumberIII {
 			System.out.print(i+" ");
 		}
 	}
+	/*
+	 * 但是仅仅通过最后异或出来的值，是没办法求出b和c的值的，但是足以帮我们把b和c划分到不同的子数组中去。
+
+一个整数有32位bit，对于b和c，除非两者是相同的数，否则一定存在第K位bit，两者是不同的。看下面的例子，
+
+当找到这个K以后，就可以按照第K位bit是否等于1，将A数组划分成两个子数组，而这两个子数组分别包含了b和c，那么剩下的就只需要把single number的算法直接应用到这两个子数组上，就可以得到b和c了。
+	 */
 	public static int[] singleNumber(int[] nums) {
         // Pass 1 : 
         // Get the XOR of the two numbers we need to find
